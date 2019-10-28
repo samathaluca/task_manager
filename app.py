@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello World ...boopies'
+    return 'Hello World ...heroku'
 
 '''
 if __name__ == '__main__':
@@ -15,8 +15,13 @@ if __name__ == '__main__':
             port=int(os.environ.get("PORT", 5000)),
             # port=int('5000'),
             debug=True)'''
-
+'''
 if __name__ == '__main__':
     app.run(host='0.0.0.0',
             port=int('8080'),
+            debug=True)
+'''
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
             debug=True)
